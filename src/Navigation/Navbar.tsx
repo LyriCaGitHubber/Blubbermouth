@@ -25,19 +25,25 @@ const UnorderedList = styled.ul`
   display: flex;
   gap: 1em;
 `;
+
+const Navigation = styled.nav``;
+
+/*
+ * Component
+ */
 const Navbar: React.FunctionComponent<NavbarProps> = (props: NavbarProps) => {
   const { links } = props;
 
   return (
     <Container>
-      <nav>
+      <Navigation>
         <UnorderedList>
           {links.map((link) => {
             let linkPath = link.toLowerCase();
             return <Link to={`/${linkPath}`}>{link}</Link>;
           })}
         </UnorderedList>
-      </nav>
+      </Navigation>
     </Container>
   );
 };
