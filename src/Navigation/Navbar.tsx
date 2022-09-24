@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import mockdata from "../mockdata";
+import { Link } from "react-router-dom";
 /*
  * Types
  */
@@ -27,14 +27,15 @@ const UnorderedList = styled.ul`
 `;
 const Navbar: React.FunctionComponent<NavbarProps> = (props: NavbarProps) => {
   const { links } = props;
-  console.log(links);
+
   return (
     <Container>
       <nav>
         <UnorderedList>
-          {links.map((link) => (
-            <li>{link}</li>
-          ))}
+          {links.map((link) => {
+            let linkPath = link.toLowerCase();
+            return <Link to={`/${linkPath}`}>{link}</Link>;
+          })}
         </UnorderedList>
       </nav>
     </Container>
