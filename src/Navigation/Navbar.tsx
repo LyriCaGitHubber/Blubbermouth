@@ -13,8 +13,7 @@ type NavbarProps = {
  * Stylings
  */
 const Container = styled.div`
-  background-color: ;
-  opacity: 0.5;
+  background-color: rgb(0, 161, 112);
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -28,6 +27,17 @@ const UnorderedList = styled.ul`
 
 const Navigation = styled.nav``;
 
+const ListItem = styled.li`
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      color: rgb(210, 56, 108);
+    }
+  }
+`;
+
 /*
  * Component
  */
@@ -40,7 +50,11 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props: NavbarProps) => {
         <UnorderedList>
           {links.map((link) => {
             let linkPath = link.toLowerCase();
-            return <Link to={`/${linkPath}`}>{link}</Link>;
+            return (
+              <ListItem>
+                <Link to={`/${linkPath}`}>{link}</Link>
+              </ListItem>
+            );
           })}
         </UnorderedList>
       </Navigation>
