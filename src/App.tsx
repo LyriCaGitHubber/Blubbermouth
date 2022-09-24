@@ -1,8 +1,11 @@
 import React from "react";
-import { JsxElement } from "typescript";
+import Navbar from "./Navigation/navbar";
+import Mockdata from "./mockdata";
+
+console.log(Mockdata);
 
 const App = () => {
-  return <div>Hello World</div>;
+  return <Navbar {...Mockdata} />;
 };
 
 export default App;
