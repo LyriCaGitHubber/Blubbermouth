@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 /*
  * Types
@@ -23,6 +25,8 @@ const UnorderedList = styled.ul`
   list-style-type: none;
   display: flex;
   gap: 1em;
+  margin: 15px;
+  padding: 0;
 `;
 
 const Navigation = styled.nav``;
@@ -56,6 +60,11 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props: NavbarProps) => {
               </ListItem>
             );
           })}
+          <FontAwesomeIcon
+            icon={faBars}
+            color="white"
+            onClick={() => console.log("klicked")}
+          />
         </UnorderedList>
       </Navigation>
     </Container>
