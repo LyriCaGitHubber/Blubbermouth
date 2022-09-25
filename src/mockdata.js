@@ -1,4 +1,4 @@
 const Mockdata = {
-  links: ["Home", "Bio", "Media", "Impressum", "Contact", "Test"],
+  links: ["Home", "Bio", "Media", "Impressum", "Contact"],
 };
 export default Mockdata;

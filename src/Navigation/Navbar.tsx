@@ -54,6 +54,13 @@ const Navbar: React.FunctionComponent<NavbarProps> = (props: NavbarProps) => {
         <UnorderedList>
           {links.map((link) => {
             let linkPath = link.toLowerCase();
+            if (link === "Home") {
+              return (
+                <ListItem>
+                  <Link to={`/`}>{link}</Link>
+                </ListItem>
+              );
+            }
             return (
               <ListItem>
                 <Link to={`/${linkPath}`}>{link}</Link>
