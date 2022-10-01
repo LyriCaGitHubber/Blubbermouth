@@ -37,19 +37,19 @@ const Contact = () => {
       <h2>Send me an E-Mail</h2>
       <br />
       <InputRow>
-        <p>Name</p>
         <InputField
           onChange={handleInputChange}
           value={inputValue}
           inputFieldName="name"
+          placeholderText="Name"
         />
       </InputRow>
       <InputRow>
-        <p>E-Mail</p>
         <InputField
           onChange={handleInputChange}
           value={inputValue}
           inputFieldName="email"
+          placeholderText="E-Mail"
         />
       </InputRow>
     </Container>
