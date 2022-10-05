@@ -22,37 +22,48 @@ const InputRow = styled.div`
   }
 `;
 
+const InitialFormValues = {
+  firstName: "",
+  lastName: "",
+  eMail: "",
+  message: "",
+};
+
 const Contact = () => {
-  const [inputValue, setInputValue] = useState();
+  const [inputValues, setInputValues] = useState(InitialFormValues);
 
   const handleInputChange = (e: any) => {
-    e.preventDefault();
-    const name = e.target.name;
-    const value = e.target.value;
-    setInputValue(inputValue);
+    const { name, value } = e.target;
+    setInputValues({ ...inputValues, [name]: value });
+    console.log(inputValues);
   };
 
   return (
-    <Container>
-      <h2>Send me an E-Mail</h2>
-      <br />
-      <InputRow>
-        <InputField
-          onChange={handleInputChange}
-          value={inputValue}
-          inputFieldName="name"
-          placeholderText="Name"
-        />
-      </InputRow>
-      <InputRow>
-        <InputField
-          onChange={handleInputChange}
-          value={inputValue}
-          inputFieldName="email"
-          placeholderText="E-Mail"
-        />
-      </InputRow>
-    </Container>
+    <>
+      <Container>
+        <h2>Send me an E-Mail</h2>
+        <br />
+        <InputRow>
+          <InputField
+            type="text"
+            onChange={handleInputChange}
+            value={inputValues.firstName}
+            inputFieldName="firstName"
+            placeholderText="Name"
+            primary={true}
+          />
+        </InputRow>
+        <InputRow>
+          <InputField
+            type="email"
+            onChange={handleInputChange}
+            value={inputValues.eMail}
+            inputFieldName="eMail"
+            placeholderText="E-Mail"
+          />
+        </InputRow>
+      </Container>
+    </>
   );
 };
 
